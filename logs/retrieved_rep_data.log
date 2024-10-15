@@ -1,0 +1,2727 @@
+{
+    "ops:world-patent-data": {
+        "@xmlns": {
+            "cpcdef": "http://www.epo.org/cpcdefinition",
+            "cpc": "http://www.epo.org/cpcexport",
+            "xlink": "http://www.w3.org/1999/xlink",
+            "reg": "http://www.epo.org/register",
+            "ops": "http://ops.epo.org"
+        },
+        "ops:register-search": {
+            "@total-result-count": "10000",
+            "ops:query": {
+                "@syntax": "CQL",
+                "$": "re=frkelly"
+            },
+            "ops:range": {
+                "@begin": "1",
+                "@end": "25"
+            },
+            "reg:register-documents": {
+                "@produced-by": "RO",
+                "reg:register-document": [
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4443306"
+                                    },
+                                    "reg:date": {
+                                        "$": "20241009"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "G06F12/0866"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24193735"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Pure Storage, Inc."
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "EINTEILUNG VON E/A IN EINER SSD-UMGEBUNG"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "SCHEDULING OF I/O IN AN SSD ENVIRONMENT"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "PLANIFICATION D'E/S DANS UN ENVIRONNEMENT SSD"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4444043"
+                                    },
+                                    "reg:date": {
+                                        "$": "20241009"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "H05B45/48"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24166638"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Current Lighting Solutions Canada Inc."
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "VERFAHREN UND SYSTEME ZUR SELEKTIVEN AKTIVIERUNG VON LED-GRUPPEN"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "METHODS AND SYSTEMS FOR SELECTIVELY ACTIVATING LED GROUPS"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "PROC\u00c9D\u00c9S ET SYST\u00c8MES D'ACTIVATION S\u00c9LECTIVE DE GROUPES DE DEL"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4442447"
+                                    },
+                                    "reg:date": {
+                                        "$": "20241009"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "B31B50/62;; B31B50/81"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "23166462"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Smurfit Kappa Services Limited"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "VERFAHREN ZUM VERSTEIFEN VON ZICKZACKFALTKARTONMATERIAL"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "METHOD OF RIGIDIFYING FANFOLD CARDBOARD MATERIAL"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "PROC\u00c9D\u00c9 DE RIGIDIFICATION DE CARTON DE PLIAGE EN \u00c9VENTAIL"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4442113"
+                                    },
+                                    "reg:date": {
+                                        "$": "20241009"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "A01K1/00"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "23166293"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Earls, Gary"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "BEL\u00dcFTETE TIERSTALLANORDNUNG"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "VENTILATING ANIMAL STALL ASSEMBLY"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "DISPOSITIF D'\u00c9TABLE VENTIL\u00c9 POUR ANIMAUX"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4438039"
+                                    },
+                                    "reg:date": {
+                                        "$": "20241002"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "A61K31/4164"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24193102"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Cosmo Technologies Ltd."
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "ORALE RIFAMYCIN SV ZUSAMMENSETZUNGEN"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "ORAL RIFAMYCIN SV COMPOSITIONS"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "COMPOSITIONS ORALES DE RIFAMYCINE SV"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4437894"
+                                    },
+                                    "reg:date": {
+                                        "$": "20241002"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "A42B3/04"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24166170"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Wilcox Industries Corp."
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "BR\u00dcCKENVERBINDUNGSBATTERIESYSTEM F\u00dcR HELMMONTAGEANORDNUNG"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "BRIDGE LINK BATTERY SYSTEM FOR HELMET MOUNT ASSEMBLY"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "SYST\u00c8ME DE BATTERIE DE LIAISON DE PONT POUR ENSEMBLE DE MONTAGE DE CASQUE"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4439148"
+                                    },
+                                    "reg:date": {
+                                        "$": "20241002"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "G02B23/12;; G02B23/16;; H04N5/33"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24166140"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Wilcox Industries Corp."
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "NACHTSICHTAUFNAHME- UND ANZEIGEMODUL F\u00dcR EINE MONOKULARE NACHTSICHTVORRICHTUNG UND NACHTSICHTSYSTEM DAMIT"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "NIGHT VISION RECORDING AND DISPLAY MODULE FOR NIGHT VISION MONOCULAR DEVICE AND NIGHT VISION SYSTEM EMPLOYING THE SAME"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "MODULE D'ENREGISTREMENT ET D'AFFICHAGE DE VISION NOCTURNE POUR DISPOSITIF MONOCULAIRE DE VISION NOCTURNE ET SYST\u00c8ME DE VISION NOCTURNE L'UTILISANT"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4439894"
+                                    },
+                                    "reg:date": {
+                                        "$": "20241002"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "H02G15/08;; H02G15/34;; H01R4/68;; F16L25/01;; H01B12/02;; H01B12/16;; H01R13/52;; F16L39/00;; F16L59/18"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "23166148"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Supernode Limited"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "KRYOSTATVERBINDUNGSANORDNUNG"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "A CRYOSTAT JOINT ASSEMBLY"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "ENSEMBLE JOINT DE CRYOSTAT"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4434486"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240925"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "A61B50/13"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24193693"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Medivators Inc."
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "ENDOSKOPAUFBEWAHRUNGSSYSTEM"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "ENDOSCOPE STORAGE CART, SYSTEM AND METHODS"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "SYST\u00c8ME DE STOCKAGE D'ENDOSCOPE"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4434541"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240925"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "A61K39/00"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24188851"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": [
+                                        {
+                                            "@app-type": "applicant",
+                                            "@designation": "all",
+                                            "@sequence": "1",
+                                            "reg:addressbook": {
+                                                "reg:name": {
+                                                    "$": "New York University"
+                                                },
+                                                "reg:address": {
+                                                    "reg:country": {}
+                                                }
+                                            },
+                                            "reg:nationality": {
+                                                "reg:country": {
+                                                    "$": ""
+                                                }
+                                            },
+                                            "reg:residence": {
+                                                "reg:country": {
+                                                    "$": ""
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "@app-type": "applicant",
+                                            "@designation": "all",
+                                            "@sequence": "2",
+                                            "reg:addressbook": {
+                                                "reg:name": {
+                                                    "$": "PureTech LYT, Inc."
+                                                },
+                                                "reg:address": {
+                                                    "reg:country": {}
+                                                }
+                                            },
+                                            "reg:nationality": {
+                                                "reg:country": {
+                                                    "$": ""
+                                                }
+                                            },
+                                            "reg:residence": {
+                                                "reg:country": {
+                                                    "$": ""
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "F\u00dcR DIE DELTA-1-KETTE DES T-ZELL-REZEPTORS SPEZIFISCHE ANTIK\u00d6RPER"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "ANTIBODIES SPECIFIC TO DELTA 1 CHAIN OF T CELL RECEPTOR"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "ANTICORPS SP\u00c9CIFIQUES DE LA CHA\u00ceNE DELTA 1 DU R\u00c9CEPTEUR DES LYMPHOCYTES T"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4436136"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240925"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "H04L67/06;; H04N21/845"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24164974"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Embark Trucks Inc."
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "DATEIFORMAT F\u00dcR SELEKTIVES STREAMING VON DATEN"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "FILE FORMAT FOR SELECTIVE STREAMING OF DATA"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "FORMAT DE FICHIER POUR DIFFUSION EN CONTINU S\u00c9LECTIVE DE DONN\u00c9ES"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4436141"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240925"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "H04L67/12;; H04L67/00;; H04L69/08;; H04L12/66;; H04L67/565;; H04L12/40"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24164971"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Embark Trucks Inc."
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "SENSORAGGREGATION IN AUTONOMEN FAHRZEUGEN"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "SENSOR AGGREGATION IN AUTONOMOUS VEHICLES"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "AGR\u00c9GATION DE CAPTEURS DANS DES V\u00c9HICULES AUTONOMES"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4431094"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240918"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "A61K31/4164"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24192746"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Cosmo Technologies Ltd."
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "ORALE RIFAMYCIN SV ZUSAMMENSETZUNGEN"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "ORAL RIFAMYCIN SV COMPOSITIONS"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "COMPOSITIONS ORALES DE RIFAMYCINE SV"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4431998"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240918"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "G02B27/10"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24192208"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "MAGIC LEAP, INC."
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "SYSTEME UND VERFAHREN F\u00dcR VIRTUELLE UND ERWEITERTE REALIT\u00c4T"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "VIRTUAL AND AUGMENTED REALITY SYSTEMS AND METHODS"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "SYST\u00c8MES ET PROC\u00c9D\u00c9S DE R\u00c9ALIT\u00c9 VIRTUELLE ET AUGMENT\u00c9E"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4431125"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240918"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "A61L29/14;; A61L29/08"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24180604"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Hollister Incorporated"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "LUBRIFIZIERENDE HYDROPHILE BESCHICHTUNGEN UND VERFAHREN ZUR BILDUNG DAVON"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "LUBRICIOUS HYDROPHILIC COATINGS AND METHODS OF FORMING THE SAME"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "REV\u00caTEMENTS HYDROPHILES LUBRIFI\u00c9S ET LEURS PROC\u00c9D\u00c9S DE FORMATION"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4428824"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240911"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "G06T15/00"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24183234"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "MAGIC LEAP, INC."
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "SYSTEM DER GEMISCHTEN REALIT\u00c4T MIT VERRINGERTER LEISTUNGSWIEDERGABE"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "MIXED REALITY SYSTEM WITH REDUCED POWER RENDERING"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "SYST\u00c8ME DE R\u00c9ALIT\u00c9 MIXTE \u00c0 RENDU DE PUISSANCE R\u00c9DUIT"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4429285"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240911"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "H04W4/44"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24175629"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Miovision Technologies Incorporated"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "SYSTEM UND VERFAHREN ZUR BEREITSTELLUNG EINER DIGITALEN KREUZUNG"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "SYSTEM AND METHOD FOR PROVIDING A DIGITAL INTERSECTION"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "SYST\u00c8ME ET PROC\u00c9D\u00c9 POUR FOURNIR UNE INTERSECTION NUM\u00c9RIQUE"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4428252"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240911"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "C12Q1/689"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "23160763"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Kerry Group Services International Limited"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "OLIGONUKLEOTIDPRIMER ZUR IDENTIFIZIERUNG EINES BAKTERIUMS DER GATTUNG BACILLUS"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "OLIGONUCLEOTIDE PRIMERS FOR THE IDENTIFICATION OF A BACTERIUM OF THE GENUS BACILLUS"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "AMORCES OLIGONUCL\u00c9OTIDIQUES POUR L'IDENTIFICATION D'UNE BACT\u00c9RIE DU GENRE BACILLUS"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4425240"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240904"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "G02B27/01;; G02B26/10;; G02B27/18;; G02B27/02;; G02B6/42;; G02B26/08"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24169475"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "MAGIC LEAP, INC."
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "PROJEKTIONSSYSTEM MIT KOLLIMIERENDEM SCANSPIEGEL"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "PROJECTION SYSTEM WITH COLLIMATING SCANNING MIRROR"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "SYST\u00c8ME DE PROJECTION AVEC MIROIR DE BALAYAGE DE COLLIMATION"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4425167"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240904"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "G01N27/66"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "23164049"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": [
+                                        {
+                                            "@app-type": "applicant",
+                                            "@designation": "all",
+                                            "@sequence": "1",
+                                            "reg:addressbook": {
+                                                "reg:name": {
+                                                    "$": "Mocon, Inc."
+                                                },
+                                                "reg:address": {
+                                                    "reg:country": {}
+                                                }
+                                            },
+                                            "reg:nationality": {
+                                                "reg:country": {
+                                                    "$": ""
+                                                }
+                                            },
+                                            "reg:residence": {
+                                                "reg:country": {
+                                                    "$": ""
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "@app-type": "applicant",
+                                            "@designation": "all",
+                                            "@sequence": "2",
+                                            "reg:addressbook": {
+                                                "reg:name": {
+                                                    "$": "Mocon, Inc."
+                                                },
+                                                "reg:address": {
+                                                    "reg:country": {}
+                                                }
+                                            },
+                                            "reg:nationality": {
+                                                "reg:country": {
+                                                    "$": ""
+                                                }
+                                            },
+                                            "reg:residence": {
+                                                "reg:country": {
+                                                    "$": ""
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "GALVANISCHER STROMSCHUTZ F\u00dcR EINEN PHOTOIONISATIONSDETEKTOR"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "GALVANIC CURRENT PROTECTION FOR PHOTOIONIZATION DETECTOR"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "PROTECTION CONTRE LE COURANT GALVANIQUE POUR D\u00c9TECTEUR \u00c0 PHOTOIONISATION"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4420626"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240828"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "A61B1/00;; A61M25/00;; A61B1/12;; A61B18/02"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24188999"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "United States Endoscopy Group, Inc."
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "VORRICHTUNGEN ZUR FL\u00dcSSIGKEITSVERTEILUNG AUS EINEM KATHETER"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "DEVICES AND METHODS FOR FLUID DISTRIBUTION FROM A CATHETER"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "DISPOSITIFS DE DISTRIBUTION DE FLUIDE \u00c0 PARTIR D'UN CATH\u00c9TER"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4421150"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240828"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "C09K19/00"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24187927"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Supernode Limited"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "SUPRALEITENDES KABELSYSTEM"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "A SUPERCONDUCTING CABLE SYSTEM"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "SYST\u00c8ME DE C\u00c2BLE SUPRACONDUCTEUR"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4420709"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240828"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "A61L29/14;; A61M25/00"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24187690"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Hollister Incorporated"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "VERFAHREN ZUR HERSTELLUNG VON UMH\u00dcLLTEN HYDROPHILEN KATHETERANORDNUNGEN"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "METHODS OF MAKING SLEEVED HYDROPHILIC CATHETER ASSEMBLIES"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "PROC\u00c9D\u00c9S DE FABRICATION D'ENSEMBLES DE CATH\u00c9TERS HYDROPHILES \u00c0 MANCHON"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4420640"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240828"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "A61F5/443;; A61F5/448"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24181915"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "Hollister Incorporated"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "DYNAMISCHE KONVEXE OSTOMIEBARRIERE"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "DYNAMIC CONVEX OSTOMY BARRIER"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "BARRI\u00c8RE D'OSTOMIE CONVEXE DYNAMIQUE"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    },
+                    {
+                        "@produced-by": "RO",
+                        "reg:ep-patent-statuses": {
+                            "reg:ep-patent-status": {
+                                "@change-date": "",
+                                "@status-code": ""
+                            }
+                        },
+                        "reg:bibliographic-data": {
+                            "reg:publication-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "4420896"
+                                    },
+                                    "reg:date": {
+                                        "$": "20240828"
+                                    }
+                                }
+                            },
+                            "reg:classifications-ipcr": {
+                                "reg:classification-ipcr": {
+                                    "@sequence": "CLASSIFICATION_1",
+                                    "reg:text": {
+                                        "$": "B60B33/02;; A61H3/04;; B60B33/00"
+                                    }
+                                }
+                            },
+                            "reg:application-reference": {
+                                "reg:document-id": {
+                                    "reg:country": {
+                                        "$": "EP"
+                                    },
+                                    "reg:doc-number": {
+                                        "$": "24159613"
+                                    }
+                                }
+                            },
+                            "reg:parties": {
+                                "reg:applicants": {
+                                    "reg:applicant": {
+                                        "@app-type": "applicant",
+                                        "@designation": "all",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "James Lecky Design Limited"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        },
+                                        "reg:nationality": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        },
+                                        "reg:residence": {
+                                            "reg:country": {
+                                                "$": ""
+                                            }
+                                        }
+                                    }
+                                },
+                                "reg:agents": {
+                                    "reg:agent": {
+                                        "@rep-type": "agent",
+                                        "@sequence": "1",
+                                        "reg:addressbook": {
+                                            "reg:name": {
+                                                "$": "FRKelly"
+                                            },
+                                            "reg:address": {
+                                                "reg:country": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "reg:invention-title": [
+                                {
+                                    "@lang": "de",
+                                    "$": "EINE ROLLE MIT RICHTUNGSSPERRE"
+                                },
+                                {
+                                    "@lang": "en",
+                                    "$": "A CASTOR WITH DIRECTION LOCK"
+                                },
+                                {
+                                    "@lang": "fr",
+                                    "$": "UNE ROULETTE AVEC BLOCAGE DE DIRECTION"
+                                }
+                            ],
+                            "@mixed.layout": [
+                                "reg:publication-reference",
+                                "reg:classifications-ipcr",
+                                "reg:application-reference",
+                                "reg:parties",
+                                "reg:invention-title",
+                                "reg:invention-title",
+                                "reg:invention-title"
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
