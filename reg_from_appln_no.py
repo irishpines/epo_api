@@ -1,5 +1,6 @@
 from ep_register_2024 import (
     get_access_token,
+    number_normalization,
     retrieve_one_extract,
     retrieve_applicant_cases,
     get_filing_date,

@@ -3,14 +3,15 @@ import requests
 import json
 import os
 import pandas as pd
+import chardet
 from dotenv import load_dotenv
+from datetime import datetime
 
 
 load_dotenv()
 CONSUMER_KEY = os.getenv("CONSUMER_KEY")
 CONSUMER_SECRET_KEY = os.getenv("CONSUMER_SECRET_KEY")
 
-from datetime import datetime
 
 CRED = base64.b64encode(f"{CONSUMER_KEY}:{CONSUMER_SECRET_KEY}".encode("utf-8"))
 AUTH_URL = "https://ops.epo.org/3.2/auth/accesstoken"
@@ -28,21 +29,37 @@ def get_access_token() -> str:
     return token
 
 
-def retrieve_one_extract(
-    number_type: str, number, token
-):  # publication or application or priority
+def number_normalization(number: str | int) -> tuple[str, str]:
+    if isinstance(number, int):
+        number = str(number)
+    if number.lower().startswith("ep"):
+        number = number[2:]
+    if len(number) == 7:
+        number = "EP" + number
+        number_type = "publication"
+    elif len(number) == 8:
+        number = "EP" + number
+        number_type = "application"
+    elif len(number) == 10:
+        number = "EP" + number[:8]
+        number_type = "application"
+    else:
+        number = number
+        number_type = "unknown"
+    return number_type, number
+
+
+def retrieve_one_extract(number_type: str, number: str, token: str) -> dict:
     headers = {"Accept": "application/json", "Authorization": f"Bearer {token}"}
     url = f"http://ops.epo.org/rest-services/register/{number_type}/epodoc/{number}/biblio"
-
     resp = requests.get(url, headers=headers)
-    resp_string = str(resp.content, encoding="utf-8")
-    resp_dict = json.loads(resp_string)
+    resp_dict = json.loads(resp.content)
+    with open(r"output_files/test_register_extract.json", "w") as f:
+        f.write(str(resp.content, encoding="utf-8"))
     return resp_dict
 
 
-def retrieve_applicant_cases(
-    applicant_name, token
-):  # publication or application or priority
+def retrieve_applicant_cases(applicant_name, token):
     headers = {"Accept": "application/json", "Authorization": f"Bearer {token}"}
     url = f"http://ops.epo.org/rest-services/register/search/?q=pa%3D{applicant_name}"
 
@@ -51,47 +68,6 @@ def retrieve_applicant_cases(
     print(resp_string)
     resp_dict = json.loads(resp_string)
     return resp.json()
-
-
-def get_filing_date(bibliographic_data):
-    filing_info = bibliographic_data["reg:application-reference"]
-    # print(filing_info)
-    if isinstance(filing_info, list):
-        for entry in filing_info:
-            try:
-                if entry["reg:document-id"]["reg:country"]["$"] == "EP":
-                    raw_filing_date = entry["reg:document-id"]["reg:date"]["$"]
-                    filing_date = datetime.strptime(raw_filing_date, "%Y%m%d")
-                    break
-            except KeyError:
-                filing_date = ""
-    else:
-        try:
-            raw_filing_date = filing_info["reg:document-id"]["reg:date"]["$"]
-            filing_date = datetime.strptime(raw_filing_date, "%Y%m%d")
-        except KeyError:
-            filing_date = ""
-    return filing_date
-
-
-def get_grant_date(bibliographic_data):
-    publn_info = bibliographic_data["reg:publication-reference"]
-    # print(filing_info)
-    if isinstance(publn_info, list):
-        for entry in publn_info:
-            try:
-                if entry["reg:document-id"]["reg:kind"]["$"] == "B1":
-                    raw_grant_date = entry["reg:document-id"]["reg:date"]["$"]
-                    grant_date = datetime.strptime(raw_grant_date, "%Y%m%d")
-                    break
-            except Exception as e:
-                print(f"exception for {bibliographic_data}\n{e}")
-                grant_date = ""
-        else:
-            grant_date = ""
-    else:
-        grant_date = ""
-    return grant_date
 
 
 def retrieve_representative_cases(
