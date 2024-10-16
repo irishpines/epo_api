@@ -5,7 +5,6 @@ import os
 import pandas as pd
 import chardet
 from dotenv import load_dotenv
-from datetime import datetime
 
 
 load_dotenv()
@@ -59,85 +58,85 @@ def retrieve_one_extract(number_type: str, number: str, token: str) -> dict:
     return resp_dict
 
 
-def retrieve_applicant_cases(applicant_name, token):
-    headers = {"Accept": "application/json", "Authorization": f"Bearer {token}"}
-    url = f"http://ops.epo.org/rest-services/register/search/?q=pa%3D{applicant_name}"
+# def retrieve_applicant_cases(applicant_name, token):
+#     headers = {"Accept": "application/json", "Authorization": f"Bearer {token}"}
+#     url = f"http://ops.epo.org/rest-services/register/search/?q=pa%3D{applicant_name}"
 
-    resp = requests.get(url, headers=headers)
-    resp_string = str(resp.content, encoding="utf-8")
-    print(resp_string)
-    resp_dict = json.loads(resp_string)
-    return resp.json()
-
-
-def retrieve_representative_cases(
-    representative_name, token
-):  # publication or application or priority
-    headers = {"Accept": "application/json", "Authorization": f"Bearer {token}"}
-    url = f"http://ops.epo.org/rest-services/register/search/?q=re%3D{representative_name}"
-
-    resp = requests.get(url, headers=headers)
-    resp_string = str(resp.content, encoding="utf-8")
-    print(resp_string)
-    resp_dict = json.loads(resp_string)
-    return resp.json()
+#     resp = requests.get(url, headers=headers)
+#     resp_string = str(resp.content, encoding="utf-8")
+#     print(resp_string)
+#     resp_dict = json.loads(resp_string)
+#     return resp.json()
 
 
-if __name__ == "__main__":
-    token = get_access_token()
+# def retrieve_representative_cases(
+#     representative_name, token
+# ):  # publication or application or priority
+#     headers = {"Accept": "application/json", "Authorization": f"Bearer {token}"}
+#     url = f"http://ops.epo.org/rest-services/register/search/?q=re%3D{representative_name}"
 
-    ## read csv with patent nos to Pandas, convert ints to str, leftpad to 7 chars with zero
-    # df = pd.read_csv(r"C:\Users\remoteuser\Google Drive\opt-outs\Kerry\Book1.csv")
-    # numbers_dates = {"Patent_No": [], "Filing_Date": [], "Grant_Date": []}
-    # for row in df.iloc[:, 0]:  # first to last row, column 0
-    #     number = str(row)
-    #     if len(number) < 7:
-    #         number = number.rjust(7, "0")
-    #     extract = retrieve_one_extract("publication", f"EP{number}", token)
-    #     with open("sample_extracts.json", "a") as f:
-    #         f.write(json.dumps(extract, indent=4))
-    #     data = extract["ops:world-patent-data"]["ops:register-search"][
-    #         "reg:register-documents"
-    #     ]["reg:register-document"]["reg:bibliographic-data"]
-    #     filing_date = get_filing_date(data).strftime("%d %b %Y")
-    #     print(filing_date)
-    #     grant_date = get_grant_date(data)
-    #     if grant_date:
-    #         grant_date = grant_date.strftime("%d %b %Y")
-    #     numbers_dates["Patent_No"].append(number)
-    #     numbers_dates["Filing_Date"].append(filing_date)
-    #     numbers_dates["Grant_Date"].append(grant_date)
-    # new_df = pd.DataFrame.from_dict(numbers_dates)
-    # new_df.to_excel("output.xlsx", sheet_name="Sheet_name_1")
+#     resp = requests.get(url, headers=headers)
+#     resp_string = str(resp.content, encoding="utf-8")
+#     print(resp_string)
+#     resp_dict = json.loads(resp_string)
+#     return resp.json()
 
-    # print(token)
-    # extract = retrieve_one_extract("publication", "EP3401400", token)
 
-    # with open("sample_extract.json", "w") as f:
-    #     f.write(json.dumps(extract, indent=4))
+# if __name__ == "__main__":
+#     token = get_access_token()
 
-    # data = extract["ops:world-patent-data"]["ops:register-search"][
-    #     "reg:register-documents"
-    # ]["reg:register-document"]["reg:bibliographic-data"]
-    # priority_data = data["reg:priority-claims"]["reg:priority-claim"]  # list
-    # print("Priority claims:")
-    # for priority in priority_data:
-    #     print(
-    #         f'{priority["@sequence"]}: {priority["reg:country"]["$"]} {priority["reg:doc-number"]["$"]} filed {priority["reg:date"]["$"]}'
-    #     )
+#     ## read csv with patent nos to Pandas, convert ints to str, leftpad to 7 chars with zero
+#     # df = pd.read_csv(r"C:\Users\remoteuser\Google Drive\opt-outs\Kerry\Book1.csv")
+#     # numbers_dates = {"Patent_No": [], "Filing_Date": [], "Grant_Date": []}
+#     # for row in df.iloc[:, 0]:  # first to last row, column 0
+#     #     number = str(row)
+#     #     if len(number) < 7:
+#     #         number = number.rjust(7, "0")
+#     #     extract = retrieve_one_extract("publication", f"EP{number}", token)
+#     #     with open("sample_extracts.json", "a") as f:
+#     #         f.write(json.dumps(extract, indent=4))
+#     #     data = extract["ops:world-patent-data"]["ops:register-search"][
+#     #         "reg:register-documents"
+#     #     ]["reg:register-document"]["reg:bibliographic-data"]
+#     #     filing_date = get_filing_date(data).strftime("%d %b %Y")
+#     #     print(filing_date)
+#     #     grant_date = get_grant_date(data)
+#     #     if grant_date:
+#     #         grant_date = grant_date.strftime("%d %b %Y")
+#     #     numbers_dates["Patent_No"].append(number)
+#     #     numbers_dates["Filing_Date"].append(filing_date)
+#     #     numbers_dates["Grant_Date"].append(grant_date)
+#     # new_df = pd.DataFrame.from_dict(numbers_dates)
+#     # new_df.to_excel("output.xlsx", sheet_name="Sheet_name_1")
 
-    # applicant_name = "N.V. Muller"
-    # all_case_data = retrieve_applicant_cases(applicant_name, token)
-    # with open(
-    #     r"C:\Users\remoteuser\Google Drive\Pythonscripts\epo_api\venv\logs\retrieved_data.log",
-    #     "a",
-    # ) as f:
-    #     f.write(json.dumps(all_case_data, indent=4))
+#     # print(token)
+#     # extract = retrieve_one_extract("publication", "EP3401400", token)
 
-    representative_name = "frkelly"
-    all_case_data = retrieve_representative_cases(representative_name, token)
-    with open(
-        r"C:\Users\remoteuser\Google Drive\Pythonscripts\epo_api\logs\retrieved_rep_data.log",
-        "w",
-    ) as f:
-        f.write(json.dumps(all_case_data, indent=4))
+#     # with open("sample_extract.json", "w") as f:
+#     #     f.write(json.dumps(extract, indent=4))
+
+#     # data = extract["ops:world-patent-data"]["ops:register-search"][
+#     #     "reg:register-documents"
+#     # ]["reg:register-document"]["reg:bibliographic-data"]
+#     # priority_data = data["reg:priority-claims"]["reg:priority-claim"]  # list
+#     # print("Priority claims:")
+#     # for priority in priority_data:
+#     #     print(
+#     #         f'{priority["@sequence"]}: {priority["reg:country"]["$"]} {priority["reg:doc-number"]["$"]} filed {priority["reg:date"]["$"]}'
+#     #     )
+
+#     # applicant_name = "N.V. Muller"
+#     # all_case_data = retrieve_applicant_cases(applicant_name, token)
+#     # with open(
+#     #     r"C:\Users\remoteuser\Google Drive\Pythonscripts\epo_api\venv\logs\retrieved_data.log",
+#     #     "a",
+#     # ) as f:
+#     #     f.write(json.dumps(all_case_data, indent=4))
+
+#     representative_name = "frkelly"
+#     all_case_data = retrieve_representative_cases(representative_name, token)
+#     with open(
+#         r"C:\Users\remoteuser\Google Drive\Pythonscripts\epo_api\logs\retrieved_rep_data.log",
+#         "w",
+#     ) as f:
+#         f.write(json.dumps(all_case_data, indent=4))
