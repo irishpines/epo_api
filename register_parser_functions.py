@@ -1,4 +1,25 @@
 from datetime import datetime
+from dataclasses import dataclass
+
+
+@dataclass
+class Party:
+    is_legal_entity: bool = False
+    is_applicant: bool = False
+    is_inventor: bool = False
+    company_name: str = ""
+    applicant_sequence_number: int = 0
+    inventor_sequence_number: int = 0
+    first_name: str = ""
+    last_name: str = ""
+    address_1: str = ""
+    address_2: str = ""
+    address_3: str = ""
+    address_4: str = ""
+    address_5: str = ""
+    address_country: str = ""
+    nationality: str = ""
+    residence_country: str = ""
 
 
 def get_application_numbers(bibliographic_data: dict) -> list[tuple[str, str]]:
@@ -171,3 +192,117 @@ def get_priority(bibliographic_data: dict) -> list[tuple]:
         priority_number = priority_section["reg:priority-claim"]["reg:doc-number"]["$"]
         priority.append((priority_country, priority_date, priority_number))
         return priority
+
+
+def get_one_applicant(party_data: dict) -> Party:
+    """
+    Takes the section of bibliographic data for a specific party and returns a Party object
+    """
+    party = Party()
+    party.is_legal_entity = True  # assumption, not sure how to distinguish other than with an undependable Regex; assume for now that it's a legal entity
+    party.is_applicant = True
+    party.company_name = party_data["reg:addressbook"]["reg:name"]["$"]
+    party.applicant_sequence_number = int(party_data["@sequence"])
+    party.address_1 = party_data["reg:addressbook"]["reg:address"]["reg:address-1"]["$"]
+    if "reg:address-2" in party_data["reg:addressbook"]["reg:address"]:
+        party.address_2 = party_data["reg:addressbook"]["reg:address"]["reg:address-2"][
+            "$"
+        ]
+    if "reg:address-3" in party_data["reg:addressbook"]["reg:address"]:
+        party.address_3 = party_data["reg:addressbook"]["reg:address"]["reg:address-3"][
+            "$"
+        ]
+    if "reg:address-4" in party_data["reg:addressbook"]["reg:address"]:
+        party.address_4 = party_data["reg:addressbook"]["reg:address"]["reg:address-4"][
+            "$"
+        ]
+    if "reg:address-5" in party_data["reg:addressbook"]["reg:address"]:
+        party.address_5 = party_data["reg:addressbook"]["reg:address"]["reg:address-5"][
+            "$"
+        ]
+    party.address_country = party_data["reg:addressbook"]["reg:address"]["reg:country"][
+        "$"
+    ]
+    party.nationality = party_data["reg:nationality"]["reg:country"]["$"]
+    party.residence_country = party_data["reg:residence"]["reg:country"]["$"]
+    return party
+
+
+def get_one_inventor(party_data: dict) -> Party:
+    """
+    Takes the section of bibliographic data for a specific party and returns a Party object
+    """
+    party = Party()
+    party.is_legal_entity = False
+    party.is_inventor = True
+    party.inventor_sequence_number = int(party_data["@sequence"])
+    full_name = party_data["reg:addressbook"]["reg:name"]["$"]
+    party.last_name, party.first_name = full_name.split(",", 1)
+    party.address_1 = party_data["reg:addressbook"]["reg:address"]["reg:address-1"]["$"]
+    if "reg:address-2" in party_data["reg:addressbook"]["reg:address"]:
+        party.address_2 = party_data["reg:addressbook"]["reg:address"]["reg:address-2"][
+            "$"
+        ]
+    if "reg:address-3" in party_data["reg:addressbook"]["reg:address"]:
+        party.address_3 = party_data["reg:addressbook"]["reg:address"]["reg:address-3"][
+            "$"
+        ]
+    if "reg:address-4" in party_data["reg:addressbook"]["reg:address"]:
+        party.address_4 = party_data["reg:addressbook"]["reg:address"]["reg:address-4"][
+            "$"
+        ]
+    if "reg:address-5" in party_data["reg:addressbook"]["reg:address"]:
+        party.address_5 = party_data["reg:addressbook"]["reg:address"]["reg:address-5"][
+            "$"
+        ]
+    party.address_country = party_data["reg:addressbook"]["reg:address"]["reg:country"][
+        "$"
+    ]
+    return party
+
+
+def get_all_applicants(bibliographic_data: dict) -> list[Party]:
+    """
+    Finds the applicants in the bibliographic data and returns a list of Party objects
+    """
+    applicants = []
+    # find the latest or only record of the applicants on the case
+    if not isinstance(bibliographic_data["reg:parties"]["reg:applicants"], list):
+        latest_applicant_raw_data = bibliographic_data["reg:parties"]["reg:applicants"][
+            "reg:applicant"
+        ]
+    else:
+        latest_applicant_raw_data = bibliographic_data["reg:parties"]["reg:applicants"][
+            0
+        ]["reg:applicant"]
+    # Loop through the list of applicants, taking account of single applicant cases where there is no list
+    if not isinstance(latest_applicant_raw_data, list):
+        applicant_raw_data = [latest_applicant_raw_data]
+    for entry in applicant_raw_data:
+        applicant = get_one_applicant(entry)
+        applicants.append(applicant)
+    return applicants
+
+
+def get_all_inventors(bibliographic_data: dict) -> list[Party]:
+    """
+    Finds the inventors in the bibliographic data and returns a list of Party objects
+    """
+    inventors = []
+    # find the latest or only record of the inventors on the case
+    if not isinstance(bibliographic_data["reg:parties"]["reg:inventors"], list):
+        latest_inventor_raw_data = bibliographic_data["reg:parties"]["reg:inventors"][
+            "reg:inventor"
+        ]
+    else:
+        latest_inventor_raw_data = bibliographic_data["reg:parties"]["reg:inventors"][
+            0
+        ]["reg:inventor"]
+    # Loop through the list of inventors, taking account of single inventor cases where there is no list
+    if not isinstance(latest_inventor_raw_data, list):
+        latest_inventor_raw_data = [latest_inventor_raw_data]
+
+    for entry in latest_inventor_raw_data:
+        inventor = get_one_inventor(entry)
+        inventors.append(inventor)
+    return inventors

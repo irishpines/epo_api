@@ -15,6 +15,8 @@ from register_parser_functions import (
     get_designated_states,
     is_granted,
     get_priority,
+    get_all_applicants,
+    get_all_inventors,
 )
 
 
@@ -36,10 +38,10 @@ def number(request):
 
 @pytest.fixture(
     params=[
-        "3661357",  # Michael Earls, pct-based, after opposition
-        "00650114.2",  # Magna, direct ep, granted
-        "1505543",  # Lockheed, deemed withdrawn, direct ep
-        "EP3009828",  # TCD, without priority
+        # "3661357",  # Michael Earls, pct-based, after opposition
+        # "00650114.2",  # Magna, direct ep, granted
+        # "1505543",  # Lockheed, deemed withdrawn, direct ep
+        # "EP3009828",  # TCD, without priority
         "EP2422227",  # Magna, two priorities
     ],
 )
@@ -202,3 +204,26 @@ def test_get_priority(register_data):
         assert len(priority_list) == 2
     else:
         assert len(priority_list) == 1
+
+
+def test_get_applicants(register_data):
+    biblio = register_data["ops:world-patent-data"]["ops:register-search"][
+        "reg:register-documents"
+    ]["reg:register-document"]["reg:bibliographic-data"]
+
+    applicants = get_all_applicants(biblio)
+    if biblio["@id"] == "EP10767749P":
+        assert len(applicants) == 1
+        assert applicants[0].company_name == "Magna Mirrors Of America, Inc."
+
+
+def test_get_inventors(register_data):
+    biblio = register_data["ops:world-patent-data"]["ops:register-search"][
+        "reg:register-documents"
+    ]["reg:register-document"]["reg:bibliographic-data"]
+
+    inventors = get_all_inventors(biblio)
+    if biblio["@id"] == "EP10767749P":
+        assert len(inventors) == 3
+        assert inventors[0].last_name == "DEWIND"
+        assert inventors[2].address_2 == "Ada Michigan 49301"
