@@ -277,8 +277,8 @@ def get_all_applicants(bibliographic_data: dict) -> list[Party]:
         ]["reg:applicant"]
     # Loop through the list of applicants, taking account of single applicant cases where there is no list
     if not isinstance(latest_applicant_raw_data, list):
-        applicant_raw_data = [latest_applicant_raw_data]
-    for entry in applicant_raw_data:
+        latest_applicant_raw_data = [latest_applicant_raw_data]
+    for entry in latest_applicant_raw_data:
         applicant = get_one_applicant(entry)
         applicants.append(applicant)
     return applicants

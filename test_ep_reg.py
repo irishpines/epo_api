@@ -38,11 +38,12 @@ def number(request):
 
 @pytest.fixture(
     params=[
-        # "3661357",  # Michael Earls, pct-based, after opposition
-        # "00650114.2",  # Magna, direct ep, granted
-        # "1505543",  # Lockheed, deemed withdrawn, direct ep
-        # "EP3009828",  # TCD, without priority
+        "3661357",  # Michael Earls, pct-based, after opposition
+        "00650114.2",  # Magna, direct ep, granted
+        "1505543",  # Lockheed, deemed withdrawn, direct ep
+        "EP3009828",  # TCD, without priority
         "EP2422227",  # Magna, two priorities
+        "3071158",  # Coleman & Cummins, joint applicants
     ],
 )
 def register_data(request):
@@ -105,10 +106,12 @@ def test_get_application_numbers(register_data):
     ]["reg:register-document"]["reg:bibliographic-data"]
 
     application_numbers = get_application_numbers(biblio)
-    if biblio["@id"] in ["EP18752141P", "EP10767749P"]:
+    if biblio["@id"] in ["EP18752141P", "EP10767749P", "EP14802413P"]:
         assert len(application_numbers) == 2
     else:
         assert application_numbers[0][1] in ["00650114", "14188853", "04018554"]
+    if biblio["@id"] == "EP14802413P":
+        assert application_numbers[1][1] == "WO2014EP75203"
 
 
 def test_get_publication_number_and_date(register_data):
@@ -123,6 +126,7 @@ def test_get_publication_number_and_date(register_data):
         "1505543",
         "3009828",
         "2422227",
+        "3071158",
     ]
     assert publication_details["EP"]["date"] in [
         "20200610",
@@ -130,13 +134,15 @@ def test_get_publication_number_and_date(register_data):
         "20050209",
         "20160420",
         "20120229",
+        "20160928",
     ]
     if "WO" in publication_details:
         assert publication_details["WO"]["number"] in [
             "2019025638",
             "2010124064",
+            "2015075149",
         ]
-        assert publication_details["WO"]["date"] in ["20190207", "20101028"]
+        assert publication_details["WO"]["date"] in ["20190207", "20101028", "20150528"]
 
 
 def test_get_filing_date(register_data):
@@ -152,6 +158,7 @@ def test_get_filing_date(register_data):
         datetime(2004, 8, 5, 0, 0),
         datetime(2014, 10, 14, 0, 0),
         datetime(2010, 4, 22, 0, 0),
+        datetime(2014, 11, 20, 0, 0),
     ]
 
 
@@ -161,7 +168,7 @@ def test_get_grant_date(register_data):
     ]["reg:register-document"]["reg:bibliographic-data"]
 
     grant_date = get_grant_date(biblio)
-    if biblio["@id"] in ["EP04018554P", "EP14188853P"]:
+    if biblio["@id"] in ["EP04018554P", "EP14188853P", "EP14802413P"]:
         assert grant_date == ""
     else:
         assert grant_date in [
@@ -186,7 +193,7 @@ def test_is_granted(register_data):
     ]["reg:register-document"]["reg:bibliographic-data"]
 
     granted = is_granted(biblio)
-    if biblio["@id"] in ["EP04018554P", "EP14188853P"]:
+    if biblio["@id"] in ["EP04018554P", "EP14188853P", "EP14802413P"]:
         assert not granted
     else:
         assert granted
@@ -202,6 +209,9 @@ def test_get_priority(register_data):
         assert len(priority_list) == 0
     elif biblio["@id"] == "EP10767749P":
         assert len(priority_list) == 2
+    elif biblio["@id"] == "EP14802413P":
+        assert len(priority_list) == 2
+        assert priority_list[1] == ("US", "20141119", "201414547557")
     else:
         assert len(priority_list) == 1
 
@@ -212,9 +222,27 @@ def test_get_applicants(register_data):
     ]["reg:register-document"]["reg:bibliographic-data"]
 
     applicants = get_all_applicants(biblio)
+    print(biblio["@id"] + "\n")
+    for applicant in applicants:
+        print(repr(applicant) + "\n")
     if biblio["@id"] == "EP10767749P":
         assert len(applicants) == 1
         assert applicants[0].company_name == "Magna Mirrors Of America, Inc."
+    if biblio["@id"] == "EP18752141P":
+        assert len(applicants) == 1
+        assert applicants[0].company_name == "Earls, Michael"
+        assert applicants[0].address_3 == "Athenry, County Galway"
+    if biblio["@id"] == "EP04018554P":
+        assert len(applicants) == 1
+        assert applicants[0].address_1 == "6801 Rockledge Drive"
+    if biblio["@id"] == "EP14802413P":
+        assert len(applicants) == 2
+        assert applicants[1].address_2 == "Citywest Campus 24"
+    if biblio["@id"] == "EP14188853P":
+        assert (
+            applicants[0].company_name == "The Provost, Fellows, Foundation Scholars, "
+            "& the other members of Board, of the College of the Holy & Undiv. Trinity of Queen"
+        )
 
 
 def test_get_inventors(register_data):
@@ -223,7 +251,16 @@ def test_get_inventors(register_data):
     ]["reg:register-document"]["reg:bibliographic-data"]
 
     inventors = get_all_inventors(biblio)
+    print(biblio["@id"] + "\n")
+    for inventor in inventors:
+        print(repr(inventor) + "\n")
     if biblio["@id"] == "EP10767749P":
         assert len(inventors) == 3
         assert inventors[0].last_name == "DEWIND"
         assert inventors[2].address_2 == "Ada Michigan 49301"
+    if biblio["@id"] == "EP04018554P":
+        assert len(inventors) == 6
+        assert (
+            inventors[3].first_name == " Jason"
+        )  # first name always has a space in front of it!
+        assert inventors[5].address_2 == "Kissimmee, Florida 34744"
