@@ -1,13 +1,15 @@
 import pytest
 import json
 from datetime import datetime
-
-from reg_from_appln_no import (
+from helpers.register_access_download import (
     get_access_token,
     number_normalization,
     retrieve_one_extract,
 )
-from register_parser_functions import (
+from helpers.register_parser_functions import (
+    Patent,
+    Party,
+    Priority,
     get_application_numbers,
     get_filing_date,
     get_publication_number_and_date,
@@ -17,10 +19,13 @@ from register_parser_functions import (
     get_priority,
     get_all_applicants,
     get_all_inventors,
+    get_title,
 )
+from reg_from_appln_no import get_full_patent_data
 
 
 @pytest.fixture(
+    scope="module",
     params=[
         "3661357",
         "EP3661357",
@@ -37,6 +42,7 @@ def number(request):
 
 
 @pytest.fixture(
+    scope="module",
     params=[
         "3661357",  # Michael Earls, pct-based, after opposition
         "00650114.2",  # Magna, direct ep, granted
@@ -109,9 +115,9 @@ def test_get_application_numbers(register_data):
     if biblio["@id"] in ["EP18752141P", "EP10767749P", "EP14802413P"]:
         assert len(application_numbers) == 2
     else:
-        assert application_numbers[0][1] in ["00650114", "14188853", "04018554"]
+        assert application_numbers["EP"] in ["00650114.2", "14188853.7", "04018554.8"]
     if biblio["@id"] == "EP14802413P":
-        assert application_numbers[1][1] == "WO2014EP75203"
+        assert application_numbers["WO"] == "WO2014EP75203"
 
 
 def test_get_publication_number_and_date(register_data):
@@ -151,7 +157,6 @@ def test_get_filing_date(register_data):
     ]["reg:register-document"]["reg:bibliographic-data"]
 
     filing_date = get_filing_date(biblio)
-    print(biblio["@id"], filing_date)
     assert filing_date in [
         datetime(2018, 8, 6, 0, 0),
         datetime(2000, 8, 24, 0, 0),
@@ -211,7 +216,9 @@ def test_get_priority(register_data):
         assert len(priority_list) == 2
     elif biblio["@id"] == "EP14802413P":
         assert len(priority_list) == 2
-        assert priority_list[1] == ("US", "20141119", "201414547557")
+        assert priority_list[1].country == "US"
+        assert priority_list[1].date == datetime(2014, 11, 19, 0, 0)
+        assert priority_list[1].number == "201414547557"
     else:
         assert len(priority_list) == 1
 
@@ -222,9 +229,6 @@ def test_get_applicants(register_data):
     ]["reg:register-document"]["reg:bibliographic-data"]
 
     applicants = get_all_applicants(biblio)
-    print(biblio["@id"] + "\n")
-    for applicant in applicants:
-        print(repr(applicant) + "\n")
     if biblio["@id"] == "EP10767749P":
         assert len(applicants) == 1
         assert applicants[0].company_name == "Magna Mirrors Of America, Inc."
@@ -251,9 +255,6 @@ def test_get_inventors(register_data):
     ]["reg:register-document"]["reg:bibliographic-data"]
 
     inventors = get_all_inventors(biblio)
-    print(biblio["@id"] + "\n")
-    for inventor in inventors:
-        print(repr(inventor) + "\n")
     if biblio["@id"] == "EP10767749P":
         assert len(inventors) == 3
         assert inventors[0].last_name == "DEWIND"
@@ -264,3 +265,30 @@ def test_get_inventors(register_data):
             inventors[3].first_name == " Jason"
         )  # first name always has a space in front of it!
         assert inventors[5].address_2 == "Kissimmee, Florida 34744"
+
+
+def test_get_title(register_data):
+    biblio = register_data["ops:world-patent-data"]["ops:register-search"][
+        "reg:register-documents"
+    ]["reg:register-document"]["reg:bibliographic-data"]
+
+    title = get_title(biblio)
+    if biblio["@id"] == "EP10767749P":
+        assert title == "MIRROR ASSEMBLY FOR VEHICLE"
+    if biblio["@id"] == "EP18752141P":
+        assert title == "NECK RAIL SYSTEMS FOR ANIMAL STALLS"
+    if biblio["@id"] == "EP04018554P":
+        assert title == "Video object tracking"
+    if biblio["@id"] == "EP14802413P":
+        assert title == "CONTROLLING A SIZE OF A PYLORUS"
+    if biblio["@id"] == "EP14188853P":
+        assert title == "Methods of determining the properties of a fluid body"
+
+
+def test_get_all_info_one_patent(number):
+    patent_obj = get_full_patent_data(number)
+    assert len(patent_obj.ep_application_number) == 10
+    if number == "EP18752141.4":
+        with open(r"output_files/repr_one_patent_obj.txt", "r") as f:
+            intended_repr = f.read()
+        assert repr(patent_obj) == intended_repr

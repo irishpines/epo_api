@@ -1,5 +1,6 @@
 from datetime import datetime
 from dataclasses import dataclass
+from helpers.epo_checksum import add_check_digit
 
 
 @dataclass
@@ -22,36 +23,52 @@ class Party:
     residence_country: str = ""
 
 
-def get_application_numbers(bibliographic_data: dict) -> list[tuple[str, str]]:
+""
+
+
+@dataclass
+class Priority:
+    country: str = ""
+    date: datetime = ""
+    number: str = ""
+
+
+@dataclass
+class Patent:
+    ref: str = ""
+    title: str = ""
+    ep_application_number: str = ""
+    wo_application_number: str = ""
+    filing_date: datetime = None
+    publication_number: str = ""
+    publication_date: datetime = None
+    is_granted: bool = False
+    grant_date: datetime = None
+    priority: list[Priority] = None
+    designated_states: list[str] = None
+    applicants: list[Party] = None
+    inventors: list[Party] = None
+
+
+def get_application_numbers(bibliographic_data: dict) -> dict[str, str]:
     """
     Takes the bibliographic data and returns a tuple of the EP and WO applications numbers if present
     """
-    application_numbers = []
+    application_numbers = {}
     if isinstance(bibliographic_data["reg:application-reference"], list):
         for entry in bibliographic_data["reg:application-reference"]:
             if entry["reg:document-id"]["reg:country"]["$"] == "EP":
-                application_numbers.append(
-                    (
-                        "EP",
-                        entry["reg:document-id"]["reg:doc-number"]["$"],
-                    )
-                )
+                eight_digit_app_num = entry["reg:document-id"]["reg:doc-number"]["$"]
+                application_numbers["EP"] = add_check_digit(eight_digit_app_num)
             else:
-                application_numbers.append(
-                    (
-                        "WO",
-                        entry["reg:document-id"]["reg:doc-number"]["$"],
-                    )
-                )
+                application_numbers["WO"] = entry["reg:document-id"]["reg:doc-number"][
+                    "$"
+                ]
     else:
-        application_numbers.append(
-            (
-                "EP",
-                bibliographic_data["reg:application-reference"]["reg:document-id"][
-                    "reg:doc-number"
-                ]["$"],
-            )
-        )
+        eight_digit_app_num = bibliographic_data["reg:application-reference"][
+            "reg:document-id"
+        ]["reg:doc-number"]["$"]
+        application_numbers["EP"] = add_check_digit(eight_digit_app_num)
 
     return application_numbers
 
@@ -164,14 +181,14 @@ def is_granted(bibliographic_data: dict) -> bool:
         return False
 
 
-def get_priority(bibliographic_data: dict) -> list[tuple]:
+def get_priority(bibliographic_data: dict) -> list[Priority]:
     """
     Takes the bibliographic data and returns a list of tuples of priority information
     in the form [(country, date as "yyyymmdd", number)], or an empty list if no priority information is found
     """
-    priority = []
+    priorities = []
     if "reg:priority-claims" not in bibliographic_data:
-        return priority
+        return priorities
     priority_section = bibliographic_data["reg:priority-claims"]
     if isinstance(
         priority_section, list
@@ -181,17 +198,25 @@ def get_priority(bibliographic_data: dict) -> list[tuple]:
         priority_section["reg:priority-claim"], list
     ):  # multiple priority claims
         for entry in priority_section["reg:priority-claim"]:
-            priority_country = entry["reg:country"]["$"]
-            priority_date = entry["reg:date"]["$"]
-            priority_number = entry["reg:doc-number"]["$"]
-            priority.append((priority_country, priority_date, priority_number))
-        return priority
+            this_priority = Priority()
+            this_priority.country = entry["reg:country"]["$"]
+            this_priority.date = datetime.strptime(entry["reg:date"]["$"], "%Y%m%d")
+            this_priority.number = entry["reg:doc-number"]["$"]
+            priorities.append(this_priority)
+        return priorities
     else:  # single priority claim
-        priority_country = priority_section["reg:priority-claim"]["reg:country"]["$"]
-        priority_date = priority_section["reg:priority-claim"]["reg:date"]["$"]
-        priority_number = priority_section["reg:priority-claim"]["reg:doc-number"]["$"]
-        priority.append((priority_country, priority_date, priority_number))
-        return priority
+        this_priority = Priority()
+        this_priority.country = priority_section["reg:priority-claim"]["reg:country"][
+            "$"
+        ]
+        this_priority.date = datetime.strptime(
+            priority_section["reg:priority-claim"]["reg:date"]["$"], "%Y%m%d"
+        )
+        this_priority.number = priority_section["reg:priority-claim"]["reg:doc-number"][
+            "$"
+        ]
+        priorities.append(this_priority)
+        return priorities
 
 
 def get_one_applicant(party_data: dict) -> Party:
@@ -306,3 +331,13 @@ def get_all_inventors(bibliographic_data: dict) -> list[Party]:
         inventor = get_one_inventor(entry)
         inventors.append(inventor)
     return inventors
+
+
+def get_title(bibliographic_data: dict) -> str:
+    """
+    Takes the bibliographic data and returns the title
+    """
+    title_section = bibliographic_data["reg:invention-title"]
+    for entry in title_section:
+        if entry["@lang"] == "en":
+            return entry["$"]
