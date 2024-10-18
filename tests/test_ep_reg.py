@@ -7,9 +7,6 @@ from helpers.register_access_download import (
     retrieve_one_extract,
 )
 from helpers.register_parser_functions import (
-    Patent,
-    Party,
-    Priority,
     get_application_numbers,
     get_filing_date,
     get_publication_number_and_date,
@@ -35,9 +32,38 @@ from reg_from_appln_no import get_full_patent_data
         "ep18752141",
         "00650114.2",
         "1505543",
+        "31650114",  # deliberately invalid application number, such as for unpublished case
+        "187521415",  # deliberately invalid application number, nine digits
+        "2",  # deliberately bad number, too small
     ],
 )
 def number(request):
+    return request.param
+
+
+@pytest.fixture(
+    scope="module",
+    params=[
+        ("3661357", "9512-20002.41.5 EPDIV5"),
+        ("EP3661357", "9512-20003.41.2 EPDIV2"),
+        ("18752141.4", "9512-20004.41.1 EPDIV"),
+        ("EP18752141.4", "MGLP-P003DEP"),
+        ("18752141", "MGLP-P004EP"),
+        ("ep18752141", "MGLP-P006EP"),
+        ("00650114.2", "MGLP-P008EP"),
+        ("1505543", "MGLP-P009EP"),
+        (
+            "31650114",
+            "MGLP-P012DEP",
+        ),  # deliberately invalid application number, such as for unpublished case
+        (
+            "187521415",
+            "MGLP-P013DEP",
+        ),  # deliberately invalid application number, nine digits
+        ("2", "MGLP-P018DEP"),  # deliberately bad number, too small
+    ],
+)
+def number_and_ref(request):
     return request.param
 
 
@@ -66,7 +92,10 @@ def test_number_normalizer(number):
     tests that number normalizer works correctly for the validly formatted numbers
     """
     number_type, number = number_normalization(number)
-    assert number_type in ["publication", "application"]
+    if number in ["187521415", "2"]:
+        assert number_type == "unknown"
+    else:
+        assert number_type in ["publication", "application"]
 
 
 def test_get_access_token():
@@ -85,25 +114,41 @@ def test_retrieve_one_extract(number):
     token = get_access_token()
     number_type, normalized_number = number_normalization(number)
     extract = retrieve_one_extract(number_type, normalized_number, token)
-    assert (
-        extract["ops:world-patent-data"]["ops:register-search"]["@total-result-count"]
-        == "1"
-    )
-    assert (
-        "reg:bibliographic-data"
-        in extract["ops:world-patent-data"]["ops:register-search"][
+    if normalized_number.startswith("EP"):
+        returned_number = normalized_number[2:]
+    else:
+        returned_number = normalized_number
+    if (
+        int(returned_number) > 30000000
+        or len(returned_number) == 9
+        or len(returned_number) == 1
+    ):  # deliberately invalid application number with yy > 2030, deliberately bad numbers too long or short
+        assert extract in (
+            {"invalid_number": str(number)},
+            {"invalid_number": "EP" + str(number)},
+        )
+    else:
+        assert (
+            extract["ops:world-patent-data"]["ops:register-search"][
+                "@total-result-count"
+            ]
+            == "1"
+        )
+        assert (
+            "reg:bibliographic-data"
+            in extract["ops:world-patent-data"]["ops:register-search"][
+                "reg:register-documents"
+            ]["reg:register-document"]
+        )
+        biblio = extract["ops:world-patent-data"]["ops:register-search"][
             "reg:register-documents"
-        ]["reg:register-document"]
-    )
-    biblio = extract["ops:world-patent-data"]["ops:register-search"][
-        "reg:register-documents"
-    ]["reg:register-document"]["reg:bibliographic-data"]
-    assert biblio["@status"] in [
-        "No opposition filed within time limit",
-        "The patent has been granted",
-        "The application is deemed to be withdrawn",
-    ]
-    assert biblio["@id"] in ["EP18752141P", "EP00650114P", "EP04018554P"]
+        ]["reg:register-document"]["reg:bibliographic-data"]
+        assert biblio["@status"] in [
+            "No opposition filed within time limit",
+            "The patent has been granted",
+            "The application is deemed to be withdrawn",
+        ]
+        assert biblio["@id"] in ["EP18752141P", "EP00650114P", "EP04018554P"]
 
 
 def test_get_application_numbers(register_data):
@@ -285,10 +330,20 @@ def test_get_title(register_data):
         assert title == "Methods of determining the properties of a fluid body"
 
 
-def test_get_all_info_one_patent(number):
-    patent_obj = get_full_patent_data(number)
-    assert len(patent_obj.ep_application_number) == 10
-    if number == "EP18752141.4":
-        with open(r"output_files/repr_one_patent_obj.txt", "r") as f:
-            intended_repr = f.read()
-        assert repr(patent_obj) == intended_repr
+def test_get_all_info_one_patent(number_and_ref):
+    number, ref = number_and_ref[0], number_and_ref[1]
+    patent_obj = get_full_patent_data(number, ref)
+    if patent_obj.title.startswith("not a valid number: "):
+        assert number in ["31650114", "187521415", "2"]
+        print(f"invalid: {patent_obj.title}")
+    else:
+        assert len(patent_obj.ep_application_number) == 10
+        print(f"valid: {patent_obj.ep_application_number}")
+        if number == "EP18752141.4":
+            patent_obj.applicants[
+                0
+            ].unique_id = "33527304"  # resetting these because they would prevent match being randomly generated each run
+            patent_obj.inventors[0].unique_id = "36210866"
+            with open(r"documentation/repr_one_patent_obj.txt", "r") as f:
+                intended_repr = f.read()
+            assert repr(patent_obj) == intended_repr

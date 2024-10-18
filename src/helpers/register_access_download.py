@@ -39,7 +39,7 @@ def number_normalization(number: str | int) -> tuple[str, str]:
     elif len(number) == 8:
         number = "EP" + number
         number_type = "application"
-    elif len(number) == 10:
+    elif len(number) == 10 and number[-2] == ".":
         number = "EP" + number[:8]
         number_type = "application"
     else:
@@ -52,6 +52,8 @@ def retrieve_one_extract(number_type: str, number: str, token: str) -> dict:
     headers = {"Accept": "application/json", "Authorization": f"Bearer {token}"}
     url = f"http://ops.epo.org/rest-services/register/{number_type}/epodoc/{number}/biblio"
     resp = requests.get(url, headers=headers)
+    if resp.status_code != 200:
+        return {"invalid_number": str(number)}
     resp_dict = json.loads(resp.content)
     with open(r"output_files/test_register_extract.json", "w") as f:
         f.write(str(resp.content, encoding="utf-8"))

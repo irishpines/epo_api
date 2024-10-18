@@ -1,10 +1,18 @@
+import random
 from datetime import datetime
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from helpers.epo_checksum import add_check_digit
 
 
 @dataclass
 class Party:
+    unique_id: str = field(
+        compare=False, default_factory=lambda: str(random.random())[-8:]
+    )
+    # To be used to match a case on CASE_DATA sheet with a party on the NAME_DATA sheet
+    # Default factory generates a different unique_id each time a new object is created
+    # compare=false allows new party to be matched with an existing party where the unique_id is different
+    # but all other fields are identical
     is_legal_entity: bool = False
     is_applicant: bool = False
     is_inventor: bool = False
@@ -21,9 +29,6 @@ class Party:
     address_country: str = ""
     nationality: str = ""
     residence_country: str = ""
-
-
-""
 
 
 @dataclass
@@ -48,6 +53,9 @@ class Patent:
     designated_states: list[str] = None
     applicants: list[Party] = None
     inventors: list[Party] = None
+
+
+all_parties_found = []  # Used to avoid creating duplicate parties on Patricia import
 
 
 def get_application_numbers(bibliographic_data: dict) -> dict[str, str]:
@@ -141,13 +149,11 @@ def get_grant_date(bibliographic_data: dict) -> datetime:
                     grant_date = datetime.strptime(raw_grant_date, "%Y%m%d")
                     break
             except Exception as e:
-                print(f"exception for {bibliographic_data}\n{e}")
                 grant_date = ""
         else:
             grant_date = ""
     else:
         grant_date = ""
-    print(grant_date)
     return grant_date
 
 
@@ -167,7 +173,6 @@ def get_designated_states(bibliographic_data: dict) -> list[str]:
         ]["reg:country"]
     for entry in designated_state_raw_list:
         designated_states.append(entry["$"])
-    print(designated_states)
     return designated_states
 
 
@@ -183,8 +188,7 @@ def is_granted(bibliographic_data: dict) -> bool:
 
 def get_priority(bibliographic_data: dict) -> list[Priority]:
     """
-    Takes the bibliographic data and returns a list of tuples of priority information
-    in the form [(country, date as "yyyymmdd", number)], or an empty list if no priority information is found
+    Takes the bibliographic data and returns a list of tuples of Priority objects, or an empty list if no priority information is found
     """
     priorities = []
     if "reg:priority-claims" not in bibliographic_data:
@@ -250,6 +254,10 @@ def get_one_applicant(party_data: dict) -> Party:
     ]
     party.nationality = party_data["reg:nationality"]["reg:country"]["$"]
     party.residence_country = party_data["reg:residence"]["reg:country"]["$"]
+    for existing_party in all_parties_found:
+        if party == existing_party:  # identical except unique_id
+            return existing_party
+    all_parties_found.append(party)
     return party
 
 
@@ -283,6 +291,10 @@ def get_one_inventor(party_data: dict) -> Party:
     party.address_country = party_data["reg:addressbook"]["reg:address"]["reg:country"][
         "$"
     ]
+    for existing_party in all_parties_found:
+        if party == existing_party:  # identical except unique_id
+            return existing_party
+    all_parties_found.append(party)
     return party
 
 

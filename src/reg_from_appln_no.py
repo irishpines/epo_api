@@ -19,11 +19,14 @@ from helpers.register_parser_functions import (
 )
 
 
-def get_full_patent_data(number) -> Patent:
+def get_full_patent_data(number, ref) -> Patent:
     token = get_access_token()
     this_patent = Patent()
+    this_patent.ref = ref
     number_type, number = number_normalization(number)
     extract = retrieve_one_extract(number_type, number, token)
+    if "invalid_number" in extract:
+        return Patent(title=f"not a valid number: {extract['invalid_number']}")
     biblio = extract["ops:world-patent-data"]["ops:register-search"][
         "reg:register-documents"
     ]["reg:register-document"]["reg:bibliographic-data"]
